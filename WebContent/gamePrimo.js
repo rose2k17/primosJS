@@ -22,11 +22,10 @@ function primo(num){
 }
 
 function numPrimo(){
-	var input = Number(prompt('Ingrese un número primo', ''));
 	while(true){
+		var input = Number(prompt('Ingrese un número primo', ''));
 		if (!input && input != 0) {
 			window.alert("ERROR: El caracter que has introducido no es válido");
-			input = Number(prompt('Vuelva a introducir un número primo', ''));
 		} else if (input == 0){
 			window.alert("¡¡Enhorabuena!!\nTu puntuación es de " + res + " punto(s)");
 			res=0;
@@ -34,7 +33,6 @@ function numPrimo(){
 		} else{
 			var a = primo(input);
 			if (nPrimo && a == input){
-				input = Number(prompt('Vuelva a introducir un número primo', ''));
 				res = res + 1;
 			} else {
 				window.alert("¡¡Enhorabuena!!\nTu puntuación es de " + res + " punto(s)");
