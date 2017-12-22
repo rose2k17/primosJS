@@ -22,18 +22,23 @@ function primo(num){
 }
 
 function numPrimo(){
-	var input = parseInt(prompt('Ingrese un número primo', ''));
+	var input = Number(prompt('Ingrese un número primo', ''));
 	while(true){
-		if (!input || input == 0) {
+		if (!input && input != 0) {
 			window.alert("ERROR: El caracter que has introducido no es válido");
-			input = parseInt(prompt('Vuelva a introducir un número primo', ''));
-		} else {
+			input = Number(prompt('Vuelva a introducir un número primo', ''));
+		} else if (input == 0){
+			window.alert("¡¡Enhorabuena!!\nTu puntuación es de " + res + " punto(s)");
+			res=0;
+			break;
+		} else{
 			var a = primo(input);
 			if (nPrimo && a == input){
-				input = parseInt(prompt('Vuelva a introducir un número primo', ''));
+				input = Number(prompt('Vuelva a introducir un número primo', ''));
 				res = res + 1;
 			} else {
 				window.alert("¡¡Enhorabuena!!\nTu puntuación es de " + res + " punto(s)");
+				res=0;
 				break;
 			}
 		}
